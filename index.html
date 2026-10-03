@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Para Nana</title>
+  
+  <link href="https://fonts.googleapis.com/css2?family=Rock+Salt&family=Special+Elite&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Pista de fondo cálida/acústica -->
+  <audio id="musicaFondo" loop>
+    <source src="https://cdn.pixabay.com/download/audio/2022/10/25/audio_244a04d509.mp3" type="audio/mpeg">
+  </audio>
+
+  <div class="textura-ruido"></div>
+
+  <!-- FASE 1: Interacción -->
+  <div id="fase1" class="contenedor-pantalla">
+    <div class="tarjeta-rebelde">
+      <div class="latido-container">
+        <div class="corazon-punk" id="botonCorazon"></div>
+      </div>
+      <p id="mensajeInteraccion" class="mensaje-ui">Toca el corazón, Nana...</p>
+      <div class="barra-progreso-fondo">
+        <div class="barra-progreso-relleno" id="barraProgreso"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FASE 2: Tarjeta de Cumpleaños para Nana -->
+  <div id="fase2" class="contenedor-pantalla oculto">
+    <div class="contenido-tarjeta">
+      
+      <header class="cabecera-tarjeta">
+        <h1 class="titulo-principal">¡FELIZ CUMPLEAÑOS!</h1>
+        <h2 class="subtitulo-punk">NANA</h2>
+      </header>
+      
+      <!-- Carrusel de Memorias -->
+      <section class="seccion-modulo">
+        <div class="cinta-adhesiva"></div>
+        <h3 class="etiqueta-seccion">NUESTROS ACORDES</h3>
+        
+        <div class="carrusel-contenedor">
+          <button class="btn-carrusel btn-prev" id="btnPrev">&lt;</button>
+          
+          <div class="carrusel" id="carruselNuestrosAcordes">
+            <div class="item-carrusel polaroid">
+              <!-- FOTO 4 -->
+              <img src="https://lh3.googleusercontent.com/d/1L0wNYjRUwyD_mOJcXIA8Vi_8aOUFGt8-" class="foto-img" alt="Nosotros">
+              <span class="texto-polaroid">Nosotros</span>
+            </div>
+            <div class="item-carrusel polaroid rotado-izq">
+              <!-- FOTO 1 -->
+              <img src="https://lh3.googleusercontent.com/d/1hxFlPgmnFzuyugqbNzWAgl8A_KEAgRaT" class="foto-img" alt="Tu luz">
+              <span class="texto-polaroid">Tu luz</span>
+            </div>
+            <div class="item-carrusel polaroid rotado-der">
+              <!-- FOTO 2 -->
+              <img src="https://lh3.googleusercontent.com/d/1iJVy4hfVDwrKRpw19nt8GuOhhK5ndg-B" class="foto-img" alt="Es bella">
+              <span class="texto-polaroid">la profundidad de sus ojos</span>
+            </div>
+            <!-- FOTO 3: Cuadro de Libertad redimensionado y agrandado -->
+            <div class="item-carrusel polaroid polaroid-horizontal-grande">
+              <img src="https://lh3.googleusercontent.com/d/1rvr_gLqkmmnqEAfsbVGStbOaDh314yGM" class="foto-img foto-especifica-libertad" alt="Libertad">
+              <span class="texto-polaroid">Libertad</span>
+            </div>
+          </div>
+          
+          <button class="btn-carrusel btn-next" id="btnNext">&gt;</button>
+        </div>
+      </section>
+      
+      <!-- Poema -->
+      <section class="seccion-modulo">
+        <div class="tarjeta-poema papel-viejo">
+          <h3 class="etiqueta-seccion oscura">Hagamos un trato</h3>
+          <p class="texto-poema">
+            Compañera,<br>
+            usted sabe que puede contar conmigo,<br>
+            no hasta dos o hasta diez,<br>
+            sino contar conmigo.<br><br>
+            Si alguna vez advierte que la miro a los ojos,<br>
+            y una veta de amor reconoce en los míos,<br>
+            no alerte sus fusiles ni piense qué delirio;<br>
+            a pesar de la veta, o tal vez porque existe,<br>
+            usted puede contar conmigo.<br><br>
+            Si otras veces me encuentra huraño sin motivo,<br>
+            no piense qué flojera, igual puede contar conmigo.<br><br>
+            Pero hagamos un trato:<br>
+            yo quisiera contar con usted,<br>
+            es tan lindo saber que usted existe,<br>
+            uno se siente vivo.<br><br>
+            Y cuando digo esto, quiero decir contar,<br>
+            aunque sea hasta dos, aunque sea hasta cinco.<br>
+            No ya para que acuda presurosa en mi auxilio,<br>
+            sino para saber a ciencia cierta,<br>
+            que usted sabe que puede contar conmigo.
+          </p>
+          <p class="autor-poema">- Mario Benedetti</p>
+        </div>
+      </section>
+      
+      <!-- Collage Fragmentos -->
+      <section class="seccion-modulo">
+        <div class="cinta-adhesiva alt"></div>
+        <h3 class="etiqueta-seccion">FRAGMENTOS</h3>
+        <div class="collage zine-grid">
+          <!-- FOTO 5 -->
+          <div class="item-collage polaroid-grid">
+            <img src="https://lh3.googleusercontent.com/d/1W9FvrOEpmusZJLqvMHPNzSaRl043grSK" class="foto-img" alt="Un espíritu libre">
+            <span class="texto-polaroid">Un espíritu libre</span>
+          </div>
+          <!-- NANA 1.jpg -->
+          <div class="item-collage polaroid-grid">
+            <img src="https://lh3.googleusercontent.com/d/1IAIi0YF8jfDCmEr5LC5xdKoz7VdQy8nF" class="foto-img" alt="irrepetible">
+            <span class="texto-polaroid">irrepetible</span>
+          </div>
+          <!-- NANA 2.jpg -->
+          <div class="item-collage polaroid-grid">
+            <img src="https://lh3.googleusercontent.com/d/1qvJ29m-_nosJ60hRCTqFaqIegoFEVSTi" class="foto-img" alt="Incomparable">
+            <span class="texto-polaroid">Incomparable</span>
+          </div>
+        </div>
+      </section>
+      
+      <!-- Mensaje Final -->
+      <section class="mensaje-final">
+        <p>Nana, eres una mujer increíble, hermosa y de una sensibilidad que me cautiva. Doy gracias a la vida por la oportunidad de haber coincidido contigo. Sé que llevamos poco conversando y que a veces puedo ser un poquito intenso; quizá no estés acostumbrada a ello, pero es mi forma más sincera de demostrarte mi querer.</p>
+        <br>
+        <p>Hoy celebro tu existencia y le pido al universo que nos permita seguir compartiendo, aprovechándonos y construyéndonos. Tengo muy presente lo que significa el <em>hevalti</em> para ti: ese compañerismo basado en el amor real, la libertad y el crecimiento colectivo. Sé que no siempre soy la mejor versión de mí mismo, pero creo profundamente en las formas en que podemos complementarnos, reconocernos y crecer juntos. Quiero construir contigo desde la confianza, la voluntad y la libertad, cuidándote sin limitarte y caminando siempre a tu lado. Feliz cumpleaños. Gracias por existir.</p>
+        <p class="firma-punk">Sigue siendo quien eres.</p>
+        <p class="firma-punk">Te quiero mucho ♡.</p>
+      </section>
+      
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
