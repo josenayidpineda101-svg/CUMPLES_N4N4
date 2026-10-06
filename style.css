@@ -248,22 +248,25 @@ body {
 .carrusel:active { cursor: grabbing; }
 .carrusel::-webkit-scrollbar { display: none; }
 
+/* --- AJUSTE TEXTO SOLAPADO (Polaroids Principales) --- */
 .item-carrusel.polaroid {
   flex: 0 0 75%;
   background-color: var(--papel-vintage);
-  padding: 12px 12px 40px 12px;
+  padding: 12px 12px 15px 12px; /* Se quitó el espacio gigante de abajo para usar flow natural */
   box-shadow: 3px 5px 10px rgba(0,0,0,0.4);
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
   scroll-snap-align: center;
   position: relative;
   user-select: none;
   height: max-content;
 }
 
-/* --- CLASE NUEVA: Agrandar significativamente el cuadro de Libertad --- */
+/* --- CLASE NUEVA: Agrandar polaroid y darle orientación horizontal --- */
 .item-carrusel.polaroid.polaroid-horizontal-grande {
-  flex: 0 0 85%; /* Ocupa un poco más de espacio en el carrusel para lucir grande */
+  flex: 0 0 95%; /* Ocupa más ancho en el carrusel, logrando su forma horizontal idónea */
 }
 
 .polaroid.rotado-izq { transform: rotate(-2deg); }
@@ -278,10 +281,12 @@ body {
   pointer-events: none;
 }
 
-/* --- FOTO DE LIBERTAD AMPLIADA Y PROPORCIONADA --- */
+/* --- FOTO DE LIBERTAD: CON PROPORCIÓN HORIZONTAL (4:3) --- */
 .foto-especifica-libertad {
-  height: 320px; /* Aumentado considerablemente de 220px a 320px para igualar presencia visual */
-  object-fit: contain; 
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 3; /* Obliga a la foto a mantenerse horizontal como querías */
+  object-fit: cover; /* Recorta perfectamente la imagen al marco horizontal */
   background-color: var(--texto-oscuro);
 }
 
@@ -290,9 +295,8 @@ body {
   color: var(--texto-oscuro);
   font-size: 0.9rem;
   text-align: center;
-  position: absolute;
-  bottom: 10px;
-  width: calc(100% - 24px);
+  width: 100%;
+  margin-top: 15px; /* Empuja el texto hacia abajo de manera natural, ¡Jamás lo pisará la foto! */
 }
 
 /* Poema */
@@ -329,9 +333,10 @@ body {
   box-shadow: 4px 4px 0px var(--rojo-sangre);
 }
 
+/* --- AJUSTE TEXTO SOLAPADO (Collage Fragmentos) --- */
 .item-collage.polaroid-grid {
   background-color: var(--papel-vintage);
-  padding: 8px 8px 30px 8px;
+  padding: 8px 8px 12px 8px; /* Margen inferior natural, reemplaza los 30px antiguos */
   position: relative;
   box-shadow: 2px 3px 6px rgba(0,0,0,0.3);
   display: flex;
@@ -382,10 +387,8 @@ body {
   .item-collage.polaroid-grid:nth-child(3) {
     grid-column: span 1; 
   }
-  
-  .foto-especifica-libertad {
-    height: 240px; /* Ajuste grande pero cómodo para celulares */
-  }
+
+  /* La regla ".foto-especifica-libertad { height: 240px; }" fue eliminada para que aspect-ratio funcione perfecto en cualquier tamaño de pantalla */
 
   .btn-prev { left: -5px; }
   .btn-next { right: -5px; }
