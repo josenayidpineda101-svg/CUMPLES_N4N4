@@ -81,13 +81,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const iniciarAutoPlay = () => {
     if (autoPlayInterval) return; 
+    // Ajustado a 2500ms para mayor velocidad de transición
     autoPlayInterval = setInterval(() => {
       if (carrusel.scrollLeft + carrusel.clientWidth >= carrusel.scrollWidth - 10) {
         carrusel.scrollTo({ left: 0, behavior: 'smooth' });
       } else {
-        carrusel.scrollBy({ left: carrusel.clientWidth * 0.75 + 20, behavior: 'smooth' });
+        // Multiplicador subido ligeramente para deslizar sin tropiezos
+        carrusel.scrollBy({ left: carrusel.clientWidth * 0.85, behavior: 'smooth' });
       }
-    }, 3000); 
+    }, 2500); 
   };
 
   const detenerAutoPlay = () => {
@@ -103,10 +105,10 @@ document.addEventListener("DOMContentLoaded", () => {
   carrusel.addEventListener('touchend', iniciarAutoPlay);
 
   btnNext.addEventListener('click', () => {
-    carrusel.scrollBy({ left: carrusel.clientWidth * 0.75 + 20, behavior: 'smooth' });
+    carrusel.scrollBy({ left: carrusel.clientWidth * 0.85, behavior: 'smooth' });
   });
   btnPrev.addEventListener('click', () => {
-    carrusel.scrollBy({ left: -(carrusel.clientWidth * 0.75 + 20), behavior: 'smooth' });
+    carrusel.scrollBy({ left: -(carrusel.clientWidth * 0.85), behavior: 'smooth' });
   });
   
   btnNext.addEventListener('mouseenter', detenerAutoPlay);
@@ -135,7 +137,8 @@ document.addEventListener("DOMContentLoaded", () => {
     if (!isDown) return;
     e.preventDefault();
     const x = e.pageX - carrusel.offsetLeft;
-    const walk = (x - startX) * 2; 
+    // Multiplicador subido a 2.5 para que reaccione más rápido y fluido al arrastrar
+    const walk = (x - startX) * 2.5; 
     carrusel.scrollLeft = scrollLeft - walk;
   });
 });
